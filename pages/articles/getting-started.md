@@ -45,3 +45,9 @@ The title of this page is: **{% $markdoc.frontmatter.title %}**, after all.
 {% /if %}
 
 ![image](/vercel.svg)
+
+A button?
+
+{% alertbutton %}
+Thanks for visiting!
+{% /alertbutton %}
