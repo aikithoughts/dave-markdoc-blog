@@ -27,6 +27,7 @@ const Question = ({ question, answer, choices }) => {
                                 value={choice}
                                 checked={selectedChoice === choice}
                                 onChange={() => handleChoiceSelect(choice)}
+                            
                             />
                             {choice}
                         </label>
