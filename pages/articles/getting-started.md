@@ -51,3 +51,11 @@ A button?
 {% alertbutton %}
 Thanks for visiting!
 {% /alertbutton %}
+
+### Test your knowledge!
+
+{% question
+   question="What is the capital of France?"
+   answer="Paris"
+   choices=["London", "Paris", "Berlin", "Madrid"]
+/%}
