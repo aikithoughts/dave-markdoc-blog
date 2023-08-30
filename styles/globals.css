@@ -79,3 +79,31 @@ a {
 .alertbutton {
   @apply bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded;
 }
+
+.question {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.question h3 {
+  @apply text-purple-600;
+}
+
+.question button {
+  @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded;
+}
+
+.question ul {
+  @apply mt-2 space-y-2 list-none;
+}
+
+.question ul label {
+  @apply inline-flex items-center;  
+}
+
+.question label input {
+  @apply mr-2 text-red-500 focus:ring focus:ring-blue-300 focus:outline-none;
+}
+
+.question span {
+  @apply text-gray-700;
+}
