@@ -101,7 +101,7 @@ a {
 }
 
 .question label input {
-  @apply mr-2 text-red-500 focus:ring focus:ring-blue-300 focus:outline-none;
+  @apply mr-2 text-blue-500 focus:ring focus:ring-blue-300 focus:outline-none;
 }
 
 .question span {
