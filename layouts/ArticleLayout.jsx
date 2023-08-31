@@ -1,8 +1,9 @@
+import TableOfContents from "@/components/TableOfContents";
 import Head from "next/head";
 import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 
-const ArticleLayout = ({ markdoc, children }) => {
+const ArticleLayout = ({ markdoc, children, toc }) => {
   const { title, description, cover } = markdoc?.frontmatter;
   return (
    <>
@@ -11,6 +12,7 @@ const ArticleLayout = ({ markdoc, children }) => {
      <meta name="description" content={description} />
     </Head>
     <SiteHeader />
+    <TableOfContents toc={toc} />
     <article className="site-article">
      <div className="wrapper">
       <header className="article-header">
