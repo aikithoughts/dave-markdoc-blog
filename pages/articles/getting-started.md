@@ -17,7 +17,7 @@ To install markdoc in Next.js, run the following command:
 ```bash
 npm install @markdoc/next.js @markdoc/markdoc
 ```
-### Background
+## Background
 Markdoc was built by [Stripe](https://stripe.com/) to power their developer documentation.
 
 {%infobox title="Hey there!" type="info"%}
@@ -52,7 +52,7 @@ A button?
 Thanks for visiting!
 {% /alertbutton %}
 
-### Test your knowledge!
+## Test your knowledge!
 
 {% question
    question="What is the capital of France?"

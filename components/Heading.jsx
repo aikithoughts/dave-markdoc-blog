@@ -1,12 +1,14 @@
-import React from "react";
+const Heading = ({ id = '', level = 1, children, className }) => {
+  const Element = `h${level}`;
 
-export default function Heading({id = '', level = 1, children, className}) {
-  return React.createElement(
-    `h${level}`,
-    {
-      id,
-      className: ['heading', className].filter(Boolean).join(' '),
-    },
-    children
+  return (
+    <Element
+      id={id}
+      className={['heading', className].filter(Boolean).join(' ')}
+    >
+      {children}
+    </Element>
   );
-}
+};
+
+export default Heading;
