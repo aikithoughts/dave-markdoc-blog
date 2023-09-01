@@ -97,7 +97,7 @@ a {
 }
 
 .question ul label {
-  @apply inline-flex items-center;  
+  @apply inline-flex items-center;
 }
 
 .question label input {
@@ -106,4 +106,33 @@ a {
 
 .question span {
   @apply text-gray-700;
+}
+
+.toc {
+  position: sticky;
+  top: calc(2.5rem + var(--top-nav-height));
+  max-height: calc(100vh - var(--top-nav-height));
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0 0;
+  border-left: 1px solid var(--border-color);
+}
+.toc ul {
+  margin: 0;
+  padding: 0 1.5rem;
+}
+.toc li {
+  list-style-type: none;
+  margin: 0 0 1rem;
+}
+.toc li :global(a) {
+  text-decoration: none;
+}
+.toc li :global(a:hover),
+.toc li.active :global(a) {
+  text-decoration: underline;
+}
+.toc li.padded {
+  padding-left: 1rem;
 }
