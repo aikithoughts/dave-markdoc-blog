@@ -136,3 +136,7 @@ a {
 .toc li.padded {
   padding-left: 1rem;
 }
+
+.readingtime {
+  @apply bg-white float-right text-gray-800 p-2 text-sm italic;
+}
