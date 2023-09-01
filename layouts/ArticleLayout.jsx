@@ -2,8 +2,9 @@ import TableOfContents from "@/components/TableOfContents";
 import Head from "next/head";
 import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
+import ReadingTime from "@/components/ReadingTime";
 
-const ArticleLayout = ({ markdoc, children, toc }) => {
+const ArticleLayout = ({ markdoc, children, toc, wordCount }) => {
   const { title, description, cover } = markdoc?.frontmatter;
   return (
     <>
@@ -30,6 +31,7 @@ const ArticleLayout = ({ markdoc, children, toc }) => {
           </header>
           <div className="article-content-page flex"> {/* Flex layout */}
             <main className="main-content prose overflow-auto flex flex-col gap-4 px-12 max-w-7xl m-auto;"> {/* Adjust width and alignment */}
+              <ReadingTime words={wordCount}/>
               {children}
             </main>
             <TableOfContents toc={toc} />
