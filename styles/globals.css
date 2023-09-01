@@ -17,6 +17,10 @@ a {
   @apply sticky top-0 w-full p-4 px-6 bg-white z-10;
 }
 
+article {
+  @apply content-center;
+}
+
 .site-header > .wrapper {
   @apply flex gap-8 justify-between max-w-6xl m-auto;
 }

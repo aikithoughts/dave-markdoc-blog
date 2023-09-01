@@ -30,7 +30,7 @@ const ArticleLayout = ({ markdoc, children, toc, wordCount }) => {
             </div>
           </header>
           <div className="article-content-page flex"> {/* Flex layout */}
-            <main className="main-content prose overflow-auto flex flex-col gap-4 px-12 max-w-7xl m-auto;"> {/* Adjust width and alignment */}
+            <main className="main-content prose overflow-auto flex flex-col gap-4 px-12 max-w-7xl m-auto content-center;"> {/* Adjust width and alignment */}
               <ReadingTime words={wordCount}/>
               {children}
             </main>
