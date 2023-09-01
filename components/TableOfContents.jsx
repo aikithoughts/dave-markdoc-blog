@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const TableOfContents = ({toc}) => {
+const TableOfContents = ({ toc }) => {
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   );
+
+  const [activeHash, setActiveHash] = useState('');
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
 
   if (items.length <= 1) {
     return null;
   }
 
   return (
-    <nav className="nav">
-      <ul className="flex column">
+    <div className="toc"> {/* Flex layout */}
+      <ul> {/* Adjusted width and spacing */}
         {items.map((item) => {
           const href = `#${item.id}`;
-          const active =
-            typeof window !== 'undefined' && window.location.hash === href;
+          const active = activeHash === href;
+
           return (
             <li
               key={item.title}
@@ -34,40 +46,8 @@ const TableOfContents = ({toc}) => {
           );
         })}
       </ul>
-      <style jsx>
-        {`
-          nav {
-            position: sticky;
-            top: calc(2.5rem + var(--top-nav-height));
-            max-height: calc(100vh - var(--top-nav-height));
-            flex: 0 0 auto;
-            align-self: flex-start;
-            margin-bottom: 1rem;
-            padding: 0.5rem 0 0;
-            border-left: 1px solid var(--border-color);
-          }
-          ul {
-            margin: 0;
-            padding: 0 1.5rem;
-          }
-          li {
-            list-style-type: none;
-            margin: 0 0 1rem;
-          }
-          li :global(a) {
-            text-decoration: none;
-          }
-          li :global(a:hover),
-          li.active :global(a) {
-            text-decoration: underline;
-          }
-          li.padded {
-            padding-left: 1rem;
-          }
-        `}
-      </style>
-    </nav>
+    </div>
   );
-}
+};
 
 export default TableOfContents;
