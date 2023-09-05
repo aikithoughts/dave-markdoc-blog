@@ -59,3 +59,7 @@ Thanks for visiting!
    answer="Paris"
    choices=["London", "Paris", "Berlin", "Madrid"]
 /%}
+
+## What about glossary terms?
+
+I don't know. What is a {% glossaryterm term="glossary" /%}, anyway?
