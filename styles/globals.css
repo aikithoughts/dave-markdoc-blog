@@ -62,7 +62,7 @@ article {
 }
 
 .info-box {
-  @apply bg-slate-700 text-slate-100 p-4 rounded-lg my-4;
+  @apply bg-blue-500 text-slate-100 p-4 rounded-lg my-4;
 }
 
 .info-box.warning {
