@@ -84,7 +84,7 @@ You can turn existing tokens into Interchain Tokens either using one of the foll
 
 ### Canonical Tokens
 
-If you have an ERC-20 token on a single chain, you can use the canonical token method to create a wrapped and bridgeable version to be available on other chains. register your ERC-20 as a {%glossaryterm term="canonical" /%} token with the Interchain Token Service. You can register a token only once as a canonical chain.
+If you have an ERC-20 token on a single chain, you can use the canonical token method to create a wrapped and bridgeable version to be available on other chains. Perform this task by registering your ERC-20 as a {%glossaryterm term="canonical" /%} token with the Interchain Token Service. You can register a token only once as a canonical chain.
 
 {% infobox title="Try it!" open=true%}
 Want to try this out? [Use Remix to create your own ERC-20](https://remix.ethereum.org/axelarnetwork/axelar-docs/blob/main/public/samples/interchain-token-simple.sol) and register your token on the [Interchain Token Portal](https://testnet.interchain.axelar.dev/).
