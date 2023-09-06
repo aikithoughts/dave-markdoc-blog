@@ -44,9 +44,7 @@ To create an Interchain Token from new standardized ERC-20 tokens:
 
 After completing these steps, you have an ERC-20 token available on multiple chains. As this token is based on the ERC-20 standard, you can interact with it using any method that you're already used to.
 
-In addition to basic actions such as sending and transferring, each token
-
-In addition to standard actions such as sending and transferring, each token supports the [Standardized Interchain Token](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/interfaces/IStandardizedToken.sol) and includes an interchainTransfer method allowing you to transfer it between blockchains.
+In addition to basic actions such as sending and transferring, each token supports the [Standardized Interchain Token](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/interfaces/IStandardizedToken.sol) and includes an interchainTransfer method allowing you to transfer it between blockchains.
 
 ```
 function interchainTransfer(
