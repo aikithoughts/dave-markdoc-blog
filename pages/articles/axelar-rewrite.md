@@ -80,7 +80,7 @@ To create an Interchain Token using custom ERC-20 tokens:
 
    This step gives the Token Manager permissions to mint and burn tokens on your behalf as tokens move between chains.
 
-## Making Interchain Tokens from existing tokens
+## Converting existing tokens into interchain tokens
 
 If you already have ERC-20 tokens on one or more blockchains, you can turn them into an Interchain Token by deploying {% glossaryterm term="Token Manager"%}Token Managers{% /glossaryterm %}. Token Managers can be either {% glossaryterm term="Lock/Release" /%} or {% glossaryterm term="Mint/Burn" /%}. For Mint/Burn Token Managers, you”ll need to give the Token Manager permissions to mint and burn tokens on your behalf as tokens move between chains.
 
@@ -89,9 +89,9 @@ You can turn existing tokens into Interchain Tokens using one of the following m
 * **Canonical token method**. Use this method for basic implementations that do not require custom functionality.
 * **Custom token method**. Use this method if you want to include custom functionality in your Interchain Tokens, or you already have a version of your token on multiple chains.
 
-### Canonical Tokens
+### Converting standardized tokens
 
-If you have an ERC-20 token on a single chain, you can use the canonical token method to create a wrapped and bridgeable version to be available on other chains. Perform this task by registering your ERC-20 as a {%glossaryterm term="canonical" /%} token with the Interchain Token Service. You can register a token only once as a canonical chain.
+If you have existing ERC-20 tokens on a single chain, use the canonical token method to create a wrapped and bridgeable version to be available on other chains. Perform this task by registering your ERC-20 as a {%glossaryterm term="canonical" /%} token with the Interchain Token Service. You can register a token only once as a canonical chain.
 
 {% infobox title="Try it!" open=true%}
 Want to try this out? [Use Remix to create your own ERC-20](https://remix.ethereum.org/axelarnetwork/axelar-docs/blob/main/public/samples/interchain-token-simple.sol) and register your token on the [Interchain Token Portal](https://testnet.interchain.axelar.dev/).
@@ -137,11 +137,11 @@ You can also register the token directly using the Interchain Token Service Smar
 
 When tokens move from the origin chain to another chain, the Token Manager locks the token on the origin chain and minted on the destination chain. If you moved tokens directly from one non-origin chain to another, the token is burned on the source chain and minted on the destination chain.
 
-### Custom Tokens
+### Converting custom tokens
 
-If you have custom tokens already deployed to multiple blockchains, you can turn those tokens into linked Interchain Tokens. This process requires that you first deploy your {% glossary term="custom token" /%} on multiple chains, or already have a version of your token on multiple chains.
+If you have custom tokens already deployed to multiple blockchains, you can convert those tokens into linked Interchain Tokens. This process requires that you first deploy your {% glossary term="custom token" /%} on multiple chains, or already have a version of your token on multiple chains.
 
-To create Interchain Tokens from existing custom tokens:
+To convert existing custom tokens into interchain tokens:
 
 1. Decide if you want to make all your token managers Mint/Burn, or you if you want one your origin chain to be Lock/Release. 
 
