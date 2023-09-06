@@ -8,13 +8,23 @@ cover: /images/Axelar-Logo-Update.png
 Check out the [Interchain Portal](https://testnet.interchain.axelar.dev/) to explore how to create Interchain Tokens.
 {%/infobox%}
 
-Axelar's Interchain Tokens allow you to take ERC-20 tokens and turn them into Interchain Tokens that are available across multiple chains. With Interchain Tokens, you can develop a number of solutions, including:
+With Axelar, you can take new and existing ERC-20 tokens and transform them into Interchain Tokens. You can make these tokens available across any number of chains. Interchain Tokens enable a number of solutions, including:
 
 * Sending tokens cross-chain
 * Building custom asset bridges
 * Building asset transfers into your interchain dApp
 
-In this topic, you'll learn how you can create new Interchain Tokens as well as how to upgrade existing tokens using Axelar's Interchain Token service.
+In this topic, you'll discover:
+
+* How to create new Interchain Tokens
+* How to transform existing tokens into Interchain Tokens
+
+## Before you begin
+
+Before you create your Interchain Tokens, you should know the following:
+
+* **New or existing**. You should know if you want to create new tokens, or if you want to transform existing tokens. For existing tokens, the Interchain Token Service supports tokens that exist on a single chain as well as tokens that are available across multple chains.
+* **Standard or custom**. Whether you create new Interchain Tokens, or you transform existing tokens into Interchain Tokens, you have two options: standardized or custom. Standardized tokens refer to tokens that comply with the [ERC-20 Token Standard](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/). Custom tokens refers to any tokens that you've built with custom features, such as custom minting policy.
 
 ## Creating new Interchain Tokens
 
@@ -23,7 +33,7 @@ Create new Interchain Tokens if you don't have any existing tokens that you want
 * Create new {% glossaryterm term="standardized token" %}standardized tokens{% /glossaryterm %}.
 * Create {% glossaryterm term="custom token" %}custom tokens{% /glossaryterm %}. Choose this option if you want to add custom logic into your token.
 
-### Standardized Tokens
+### Creating standardized interchain tokens
 
 To create an Interchain Token from new standardized ERC-20 tokens:
 
@@ -32,13 +42,11 @@ To create an Interchain Token from new standardized ERC-20 tokens:
 1. Select a source network where you have funds.
 1. Choose to deploy a new ERC-20 token.
 
-After completing these steps, you now have an ERC-20 token available on multiple chains.
+After completing these steps, you have an ERC-20 token available on multiple chains. As this token is based on the ERC-20 standard, you can interact with it using any method that you're already used to.
 
-You can interact with your token on any chain identically, as they are all ERC-20 tokens, using any method that you're already used to.
+In addition to basic actions such as sending and transferring, each token
 
-In addition to standard actions such as sending and transferring, each token is a [Standardized Interchain Token](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/interfaces/IStandardizedToken.sol) and supports an interchainTransfer method allowing you to transfer it between blockchains.
-
-The following code displays the function signature of the interchainTransfer method.
+In addition to standard actions such as sending and transferring, each token supports the [Standardized Interchain Token](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/interfaces/IStandardizedToken.sol) and includes an interchainTransfer method allowing you to transfer it between blockchains.
 
 ```
 function interchainTransfer(
@@ -49,10 +57,9 @@ function interchainTransfer(
 ) external payable;
 ```
 
-### Custom Tokens
+### Creating interchain tokens
 
-
-If you want more features than the {% glossaryterm term="standardized token" /%} provides, create a {% glossaryterm term="custom token" /%}. A custom token might be the right solution if you want to:
+If you want your tokens to include more features than the {% glossaryterm term="standardized token" /%} provides, create a {% glossaryterm term="custom token" /%}. Examples of when to use a custom token include:
 
 * Customize minting policies
 * Ensure ownership or control of the token by a DAO
@@ -75,12 +82,12 @@ To create an Interchain Token using custom ERC-20 tokens:
 
 ## Making Interchain Tokens from existing tokens
 
-If you already have an ERC-20 token on one or more blockchains, you can turn it into an Interchain Token by deploying {% glossaryterm term="Token Manager"%}Token Managers{% /glossaryterm %}. Token Managers can be either {% glossaryterm term="Lock/Release" /%} or {% glossaryterm term="Mint/Burn" /%}. For Mint/Burn Token Managers, you”ll need to give the Token Manager permissions to mint and burn tokens on your behalf as tokens move between chains.
+If you already have ERC-20 tokens on one or more blockchains, you can turn them into an Interchain Token by deploying {% glossaryterm term="Token Manager"%}Token Managers{% /glossaryterm %}. Token Managers can be either {% glossaryterm term="Lock/Release" /%} or {% glossaryterm term="Mint/Burn" /%}. For Mint/Burn Token Managers, you”ll need to give the Token Manager permissions to mint and burn tokens on your behalf as tokens move between chains.
 
-You can turn existing tokens into Interchain Tokens either using one of the following methods:
+You can turn existing tokens into Interchain Tokens using one of the following methods:
 
-* Canonical token method. Use this method for basic implementations that do not require custom functionality.
-* Custom token method. Use this method if you want to include custom functionality in your Interchain Tokens, or you already have a version of your token on multiple chains.
+* **Canonical token method**. Use this method for basic implementations that do not require custom functionality.
+* **Custom token method**. Use this method if you want to include custom functionality in your Interchain Tokens, or you already have a version of your token on multiple chains.
 
 ### Canonical Tokens
 
@@ -128,7 +135,7 @@ You can also register the token directly using the Interchain Token Service Smar
 
    This action creates an ERC-20 on each destination chain as well as Mint/Burn Token Manager.
 
-When tokens move from the origin chain to another chain, the Token Manager locks the token on the origin chain and minted on the destination chain. If you moved tokens directly from one non-origin chain to another, the token would be burned on the source chain and minted on the destination chain.
+When tokens move from the origin chain to another chain, the Token Manager locks the token on the origin chain and minted on the destination chain. If you moved tokens directly from one non-origin chain to another, the token is burned on the source chain and minted on the destination chain.
 
 ### Custom Tokens
 
@@ -136,7 +143,7 @@ If you have custom tokens already deployed to multiple blockchains, you can turn
 
 To create Interchain Tokens from existing custom tokens:
 
-1. Decide if you want to make all your token managers Mint/Burn, or you if you want one (likely your primary/origin chain) to be Lock/Release. 
+1. Decide if you want to make all your token managers Mint/Burn, or you if you want one your origin chain to be Lock/Release. 
 
 1. Register a Token Manager for each custom token.
 
@@ -163,7 +170,7 @@ To create Interchain Tokens from existing custom tokens:
 
 ## More use cases
 
-The Interchain Token Service is a powerful tool for moving tokens between blockchains, and providing you all of the functionality and power you need to make your token interactive wherever it needs to be. Here are some other possibilities for Interchain Tokens:
+The Interchain Token Service is a powerful tool for moving tokens between blockchains, providing you all of the functionality and power you need to make your token interactive wherever it needs to be. Here are some other possibilities for Interchain Tokens:
 
 * Use the {% glossaryterm term="operator" /%}. The Operator is able to manage the flow rates of tokens between chains by calling setFlowLimit on the Interchain Token Service.
 
