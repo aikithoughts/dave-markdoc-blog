@@ -55,7 +55,7 @@ function interchainTransfer(
 ) external payable;
 ```
 
-### Creating interchain tokens
+### Creating custom interchain tokens
 
 If you want your tokens to include more features than the {% glossaryterm term="standardized token" /%} provides, create a {% glossaryterm term="custom token" /%}. Examples of when to use a custom token include:
 
