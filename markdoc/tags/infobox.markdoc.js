@@ -11,5 +11,8 @@ export const infobox = {
         title: {
             type: String,
         },
+        open: {
+            type: Boolean,
+        },
     },
 };
