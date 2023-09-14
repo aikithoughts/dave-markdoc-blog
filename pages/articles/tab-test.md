@@ -6,12 +6,12 @@ cover: /images/martin-sanchez-gD3dUQpMlvk-unsplash.jpg
 
 {% tabs %}
 
-{% tab label="React" %}
-React content goes here
+{% tab label="s" %}
+Only show me!
 {% /tab %}
 
-{% tab label="HTML" %}
-HTML content goes here
+{% tab label="sm" %}
+Show me too!
 {% /tab %}
 
 {% /tabs %}

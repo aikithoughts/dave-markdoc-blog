@@ -1,8 +1,7 @@
 import { Tag } from '@markdoc/markdoc';
-import { Tabs } from '../../components/Tabs';
-import { Tab } from '../../components/Tab';
+import { Tabs, Tab } from '../../components/Tabs';
 
-const tabs = {
+export const tabs = {
   render: Tabs,
   attributes: {},
   transform(node, config) {
@@ -15,14 +14,14 @@ const tabs = {
   }
 };
 
-const tab = {
-  render: Tab,
-  attributes: {
-    label: {
-      type: String
+export const tab = {
+    render: Tab,
+    attributes: {
+      label: {
+        type: String
+      }
     }
-  }
-};
+  };
 
 /** @type {import('@markdoc/markdoc').Config} */
 const config = {

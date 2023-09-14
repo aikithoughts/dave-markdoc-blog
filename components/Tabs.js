@@ -27,3 +27,14 @@ export function Tabs({ labels, children }) {
     </TabContext.Provider>
   );
 };
+
+export function Tab({ label, children }) {
+    const currentTab = React.useContext(TabContext);
+  
+   // if (label !== currentTab) {
+    if (!currentTab.includes(label)) {
+      return null;
+    }
+  
+    return children;
+  }
