@@ -5,5 +5,5 @@ export * from './alertbutton.markdoc';
 export * from './question.markdoc';
 export * from './glossaryterm.markdoc';
 export * from './tabs.markdoc.js';
-// export * from './tab.markdoc.js';
+export * from './brevity.markdoc.js';
 
