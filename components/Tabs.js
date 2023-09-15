@@ -8,21 +8,31 @@ export function Tabs({ labels, children }) {
     setCurrentTab
   ] = React.useState(labels[0]);
 
+  const uniqueLabels = [...new Set(labels)];
+
+  const labelValues = {
+    "s": "Terse",
+    "sm": "Standard",
+    "sml": "Verbose"
+  }
+
   return (
     <TabContext.Provider value={currentTab}>
-      <ul role="tablist">
-        {labels.map((label) => (
-          <li key={label}>
-            <button
+      <div role="tablist">
+        {uniqueLabels.map((label) => (
+          <div key={label}>
+            <input
+              type="radio"
+              id={label}
               role="tab"
               aria-selected={label === currentTab}
               onClick={() => setCurrentTab(label)}
-            >
-              {label}
-            </button>
-          </li>
+              name="tabs"
+            /> {''}
+            <label htmlFor={label}>{labelValues[label]}</label>
+          </div>
         ))}
-      </ul>
+      </div>
       {children}
     </TabContext.Provider>
   );
