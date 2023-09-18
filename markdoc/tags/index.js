@@ -4,3 +4,6 @@ export * from './infobox.markdoc';
 export * from './alertbutton.markdoc';
 export * from './question.markdoc';
 export * from './glossaryterm.markdoc';
+export * from './tabs.markdoc.js';
+export * from './brevity.markdoc.js';
+
