@@ -7,7 +7,7 @@ export const brevitygroup = {
   transform(node, config) {
     const labels = node
       .transformChildren(config)
-      .filter((child) => child && child.name === 'Tab')
+      .filter((child) => child && child.name === 'Brevity')
       .map((brevity) => (typeof brevity === 'object' ? brevity.attributes.label : null));
 
     return new Tag(this.render, { labels }, node.transformChildren(config));
